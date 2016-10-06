@@ -1,0 +1,56 @@
+Xft.dpi:                    120
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintfull
+
+URxvy*borderless:	1
+URxvt.depth:                32
+URxvt.geometry:             90x30
+URxvt.transparent:          false
+URxvt.fading:               0
+! URxvt.urgentOnBell:         true
+! URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            50
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+urxvt*background: rgba:0000/0000/0200/c800
+URxvt.allow_bold:           false
+URxvt.font:	xft:droid sans mono:pixelsize=16:antialias=true:hinting:true
+URxvt*letterSpace: -1
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+URxvt.perl-ext-common:      default,matcher,clipboard
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          google-chrome-stable
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+URxvt.pointerBlank:         true
+
+! Keys
+!URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+!URxvt.keysym.Shift-Control-C:     perl:clipboard:copy
+!URxvt.iso14755:             false
+URxvt.clipboard.autocopy:   true
+
+*foreground: white
+*background: black
+
+*color0:  #2E3436
+*color1:  #a40000
+*color2:  #4E9A06
+*color3:  #C4A000
+*color4:  #3465A4
+*color5:  #75507B
+*color6:  #ce5c00
+*color7:  #babdb9
+*color8:  #555753
+*color9:  #EF2929
+*color10: #8AE234
+*color11: #FCE94F
+*color12: #729FCF
+*color13: #AD7FA8
+*color14: #fcaf3e
+*color15: #EEEEEC
