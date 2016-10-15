@@ -5,6 +5,7 @@ import Graphics.X11.ExtraTypes.XF86
 import XMonad.Util.EZConfig
 import XMonad.Util.Paste
 import XMonad.Hooks.ManageDocks
+import qualified XMonad.Hooks.ICCCMFocus as ICCCMFocus
 
 baseConfig = desktopConfig
 
@@ -31,4 +32,5 @@ main = xmonad $ baseConfig
   , layoutHook = myLayoutHook
   -- , manageHook = myManageHook <+> manageDocks
   , manageHook = manageHook baseConfig <+> manageDocks
+  , logHook = ICCCMFocus.takeTopFocus
 	} `additionalKeys` myKeys
