@@ -1,5 +1,6 @@
 [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 xsetroot -cursor_name left_ptr
+xset -b
 compton -CGb
 xmobar &
 albert &
