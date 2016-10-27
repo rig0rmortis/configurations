@@ -17,7 +17,8 @@ URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 urxvt*background: rgba:0000/0000/0200/c800
 URxvt.allow_bold:           false
-URxvt.font:	xft:droid sans mono:pixelsize=16:antialias=true:hinting:true
+! URxvt.font:	xft:droid sans mono:pixelsize=16:antialias=true:hinting:true
+URxvt.font:	xft:Source Code Pro:pixelsize=16:antialias=true:hinting:true
 URxvt*letterSpace: -1
 URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
