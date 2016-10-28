@@ -1,3 +1,10 @@
+call plug#begin('~/.vim/plugged')
+Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'chriskempson/base16-vim'
+call plug#end()
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -58,11 +65,6 @@ if has("gui_running")
     set guitablabel=%M\ %t
 endif
 
-" The Silver Searcher
-if executable('ag')
-    let g:ackprg = 'ag --vimgrep'
-endif
-
 set expandtab
 set smarttab
 set shiftwidth=2
@@ -82,17 +84,13 @@ map e <END>
 map b <HOME>
 map gf <c-w>gf
 
-" Powerline plugin for vim
-set rtp+=/Users/omar/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/
-
-" Always show statusline
+" Always show Airline 
 set laststatus=2
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16_chalk'
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
-
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 function! HasPaste()
   if &paste
