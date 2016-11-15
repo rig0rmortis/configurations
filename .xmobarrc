@@ -76,9 +76,9 @@ Config {
 
                              , "--" -- battery specific options
                                        -- discharging status
-                                       , "-o"	, "<left>% (<timeleft>)"
+                                       , "-o"	, "<left> % (<timeleft>)"
                                        -- AC "on" status
-                                       , "-O"	, "<fc=#dAA520>Charging <left>%</fc>"
+                                       , "-O"	, "Charging <left> %"
                                        -- charged status
                                        , "-i"	, "<fc=#006000>Charged</fc>"
                              ] 50

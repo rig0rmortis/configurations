@@ -1,4 +1,5 @@
 # If you come from bash you might have to change your $PATH.
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -83,4 +84,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vpn="sudo openvpn --config /etc/openvpn/US_East.conf"
+alias vpn_ca="sudo openvpn --config /etc/openvpn/CA_Toronto.conf"
+alias vpn_us="sudo openvpn --config /etc/openvpn/US_East.conf"
+alias fuckmaine="sudo netctl start fuckmaine"
