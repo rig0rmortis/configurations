@@ -87,3 +87,4 @@ source $ZSH/oh-my-zsh.sh
 alias vpn_ca="sudo openvpn --config /etc/openvpn/CA_Toronto.conf"
 alias vpn_us="sudo openvpn --config /etc/openvpn/US_East.conf"
 alias fuckmaine="sudo netctl start fuckmaine"
+alias mouse="sudo ~/mouse_script.sh"
