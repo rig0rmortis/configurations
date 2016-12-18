@@ -17,7 +17,7 @@ xmobar &
 albert &
 
 # Start the thunar daemon in the background for auto usb mounting
-thunar --daemon
+thunar --daemon &
 
 # Set wallpaper
 feh --bg-scale ~/.wallpapers/.wallpaper-1.jpg
