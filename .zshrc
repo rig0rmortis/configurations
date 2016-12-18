@@ -84,7 +84,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vpn_ca="sudo openvpn --config /etc/openvpn/CA_Toronto.conf"
-alias vpn_us="sudo openvpn --config /etc/openvpn/US_East.conf"
+alias vpn-ca="sudo openvpn --config /etc/openvpn/CA_Toronto.conf"
+alias vpn-us="sudo openvpn --config /etc/openvpn/US_East.conf"
 alias fuckmaine="sudo netctl start fuckmaine"
 alias mouse="sudo ~/mouse_script.sh"
+alias e="emacs -nw"
+alias lowres="xrandr -s 1920x1080"
+alias highres="xrandr -s 2560x1440"
