@@ -13,6 +13,9 @@ compton -CGb
 # Start xmobar in the background
 xmobar &
 
+# Start trayer
+trayer --edge bottom --align right --width 15 --transparent true --SetDockType true --SetPartialStrut true --height 21 --tint 0x212121 &
+
 # Start albert in the background
 albert &
 
