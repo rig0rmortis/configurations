@@ -2,9 +2,9 @@ Config {
 
    -- appearance
      font =         "xft:Source Code Pro:size=10:antialias=true"
-   , bgColor =      "black"
+   , bgColor =      "#212121"
    , alpha = 200
-   , fgColor =      "white"
+   , fgColor =      "#EEEEEE" --"white"
    , position =     Top
    , border =       BottomB
    , borderColor =  "#343434"
@@ -42,27 +42,27 @@ Config {
         [ Run DynNetwork     [ "--template" , "<dev>: <tx> kB/s | <rx> kB/s"
                              , "--Low"      , "1000"       -- units: B/s
                              , "--High"     , "5000"       -- units: B/s
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#4CAF50" --"darkgreen"
+                             , "--normal"   , "#FF9800" --"darkorange"
+                             , "--high"     , "#F44336" --"darkred"
                              ] 10
 
         -- cpu activity monitor
         , Run MultiCpu       [ "--template" , "Cpu: <total0> % | <total1> %"
                              , "--Low"      , "50"         -- units: %
                              , "--High"     , "85"         -- units: %
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#4CAF50" --"darkgreen"
+                             , "--normal"   , "#FF9800" --"darkorange"
+                             , "--high"     , "#F44336" --"darkred"
                              ] 10
 
         -- memory usage monitor
         , Run Memory         [ "--template" ,"Mem: <usedratio> %"
                              , "--Low"      , "20"        -- units: %
                              , "--High"     , "90"        -- units: %
-                             , "--low"      , "darkgreen"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkred"
+                             , "--low"      , "#4CAF50" --"darkgreen"
+                             , "--normal"   , "#FF9800" --"darkorange"
+                             , "--high"     , "#F44336" --"darkred"
                              ] 10
 
         -- battery monitor
@@ -70,9 +70,9 @@ Config {
                              [ "--template" , "Batt: <acstatus>"
                              , "--Low"      , "10"        -- units: %
                              , "--High"     , "60"        -- units: %
-                             , "--low"      , "darkred"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkgreen"
+                             , "--low"      , "#F44336" --"darkred"
+                             , "--normal"   , "#FF9800" --"darkorange"
+                             , "--high"     , "#4CAF50" --"darkgreen"
 
                              , "--" -- battery specific options
                                        -- discharging status
@@ -80,7 +80,7 @@ Config {
                                        -- AC "on" status
                                        , "-O"	, "<left> % (<timeleft>)"
                                        -- charged status
-                                       , "-i"	, "<left> % (<timeleft>)" -- "<fc=#006000>Charged</fc>"
+                                       , "-i"	, "<left> % (<timeleft>)"
                              ] 50
 
         -- time and date indicator
