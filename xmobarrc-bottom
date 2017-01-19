@@ -1,10 +1,10 @@
 Config {
    -- appearance
      font =         "xft:Source Code Pro:size=10:antialias=true"
-   , bgColor =      "#212121"
-   , alpha = 200
+   , bgColor =      "#1f1f1f" --"#212121"
+   --, alpha = 200
    , fgColor =      "white"
-   , position =     BottomW L 100
+   , position =     BottomW L 100 
    , border =       TopB
    , borderColor =  "#343434"
 

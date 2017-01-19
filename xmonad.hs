@@ -9,7 +9,6 @@ import XMonad.Util.Paste
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
--- import qualified XMonad.Hooks.ICCCMFocus as ICCCMFocus
 
 baseConfig = desktopConfig
 
@@ -52,14 +51,13 @@ main = do
   xmbproc <- spawnPipe "xmobar ~/.xmobarrc-bottom"
   xmonad $ baseConfig {
     terminal = "urxvt"
-  , modMask	= mod1Mask
+  , modMask = mod1Mask
   , borderWidth = 3
   , normalBorderColor = "#313131"
   , focusedBorderColor = "#3F51B5"
   , workspaces = myWorkspaces
   , layoutHook = smartSpacing 10 $ myLayoutHook
   , manageHook = manageHook baseConfig <+> manageDocks
-  --, logHook = ICCCMFocus.takeTopFocus
   , logHook = dynamicLogWithPP $ xmobarPP {
       ppOutput = hPutStrLn xmbproc
       , ppTitle = xmobarColor xmobarTitleColor "" . shorten 100

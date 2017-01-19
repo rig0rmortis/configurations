@@ -2,8 +2,8 @@ Config {
 
    -- appearance
      font =         "xft:Source Code Pro:size=10:antialias=true"
-   , bgColor =      "#212121"
-   , alpha = 200
+   , bgColor =      "#1f1f1f" --"#212121"
+   -- , alpha = 200
    , fgColor =      "#EEEEEE" --"white"
    , position =     Top
    , border =       BottomB
