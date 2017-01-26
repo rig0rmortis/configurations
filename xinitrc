@@ -7,14 +7,17 @@ xsetroot -cursor_name left_ptr
 # This will silence motherboard sounds (invalid keystrokes)
 xset -b
 
+# Stuff to get custom icons working
+export QT_PLATFORMTHEME=qt5ct && export QT_PLATFORM_PLUGIN=qt5ct && export QT_QPA_PLATFORMTHEME=qt5ct
+
 # Start compton
 compton -CGb
 
 # Start xmobar in the background
 xmobar &
 
-# Start trayer
-trayer --edge bottom --align right --width 15 --transparent true --SetDockType true --SetPartialStrut true --height 21 --tint 0x212121 &
+# Start stalonetray
+stalonetray &
 
 # Start albert in the background
 albert &
