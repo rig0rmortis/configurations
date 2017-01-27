@@ -16,8 +16,8 @@ compton -CGb
 # Start xmobar in the background
 xmobar &
 
-# Start stalonetray
-stalonetray &
+# Start trayer
+trayer --edge bottom --align right --width 15 --transparent true  --SetPartialStrut true --height 22 --alpha 0 --tint 0x1f1f1f &
 
 # Start albert in the background
 albert &
