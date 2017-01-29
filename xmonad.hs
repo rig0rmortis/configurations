@@ -9,6 +9,7 @@ import XMonad.Util.Paste
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
+import XMonad.Actions.CycleWS
 
 baseConfig = desktopConfig
 
@@ -22,6 +23,19 @@ myKeys =
     ((0, xK_Insert), pasteSelection)
    ]
 
+myKeysP =
+  [
+    ("<XF86MonBrightnessUp>",   spawn "xbacklight +10"),
+    ("<XF86MonBrightnessDown>", spawn "xbacklight -10"),
+    ("<XF86AudioMute>",        spawn "amixer set Master toggle"),
+    ("<XF86AudioRaiseVolume>", spawn "amixer set Master 5+"),
+    ("<XF86AudioLowerVolume>", spawn "amixer set Master 5-"),
+    ("<Insert>", pasteSelection),
+    ("M-]", nextWS),
+    ("M-[" , prevWS)
+   ]
+
+
 myLayoutHook = avoidStruts $ smartBorders (layoutHook baseConfig)
 
 myManageHook = composeAll
@@ -34,11 +48,11 @@ myWorkspaces =
     "2:web",
     "3:code",
     "4:code",
-    "5:communication",
+    "5:irc",
     "6:data",
     "7:torrent",
-    "8:games",
-    "9:containers"
+    "8:dev",
+    "9:music"
   ]
 
 xmobarTitleColor = "#F44336"
@@ -46,6 +60,7 @@ xmobarTitleColor = "#F44336"
 xmobarCurrentWorkspaceColor = "#4CAF50"
 
 xmobarHiddenColor = "#EEEEEE"
+
 
 main = do
   xmbproc <- spawnPipe "xmobar ~/.xmobarrc-bottom"
@@ -56,6 +71,7 @@ main = do
   , normalBorderColor = "#313131"
   , focusedBorderColor = "#3F51B5"
   , workspaces = myWorkspaces
+  , handleEventHook = docksEventHook <+> handleEventHook baseConfig
   , layoutHook = smartSpacing 10 $ myLayoutHook
   , manageHook = manageHook baseConfig <+> manageDocks
   , logHook = dynamicLogWithPP $ xmobarPP {
@@ -68,4 +84,4 @@ main = do
       , ppSep = "    "
       , ppWsSep = "  "
       }
-  } `additionalKeys` myKeys
+  } `additionalKeysP` myKeysP
