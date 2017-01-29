@@ -13,16 +13,6 @@ import XMonad.Actions.CycleWS
 
 baseConfig = desktopConfig
 
-myKeys =
-  [
-    ((0, xF86XK_MonBrightnessUp),   spawn "xbacklight +10"),
-    ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -10"),
-    ((0, xF86XK_AudioMute),        spawn "amixer set Master toggle"),
-    ((0, xF86XK_AudioRaiseVolume), spawn "amixer set Master 5+"),
-    ((0, xF86XK_AudioLowerVolume), spawn "amixer set Master 5-"),
-    ((0, xK_Insert), pasteSelection)
-   ]
-
 myKeysP =
   [
     ("<XF86MonBrightnessUp>",   spawn "xbacklight +10"),
@@ -32,9 +22,9 @@ myKeysP =
     ("<XF86AudioLowerVolume>", spawn "amixer set Master 5-"),
     ("<Insert>", pasteSelection),
     ("M-]", nextWS),
-    ("M-[" , prevWS)
+    ("M-[" , prevWS),
+    ("M-s", spawn "scrot")
    ]
-
 
 myLayoutHook = avoidStruts $ smartBorders (layoutHook baseConfig)
 
@@ -42,6 +32,7 @@ myManageHook = composeAll
   [ className =? "Steam"    --> doFloat
   , className =? "albert"   --> doFloat]
 
+myWorkspaces :: [String]
 myWorkspaces =
   [
     "1:general",
@@ -55,13 +46,16 @@ myWorkspaces =
     "9:music"
   ]
 
+xmobarTitleColor :: String
 xmobarTitleColor = "#F44336"
 
+xmobarCurrentWorkspaceColor :: String
 xmobarCurrentWorkspaceColor = "#4CAF50"
 
+xmobarHiddenColor :: String
 xmobarHiddenColor = "#EEEEEE"
 
-
+main :: IO()
 main = do
   xmbproc <- spawnPipe "xmobar ~/.xmobarrc-bottom"
   xmonad $ baseConfig {
