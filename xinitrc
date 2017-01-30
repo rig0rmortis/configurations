@@ -26,7 +26,17 @@ albert &
 thunar --daemon &
 
 # Set wallpaper
-feh --bg-scale ~/.wallpapers/.wallpaper-1.jpg
+feh --bg-scale ~/Wallpapers/nms.jpg
+
+# Start NetworkManager applet
+nm-applet &
+
+# Load the .Xdefaults file
+xrdb --merge ~/.Xdefaults
+
+# SSH-agent stuff to handle keys and what not
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 
 # Finally, start xmonad!
 exec xmonad
