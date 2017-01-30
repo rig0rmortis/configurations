@@ -16,6 +16,8 @@ try
 catch
 endtry
 
+set encoding=utf-8
+set t_Co=256
 set noswapfile
 set cursorline
 hi CursorColumn ctermfg=White ctermbg=darkgrey term=bold guifg=black guibg=blue gui=bold cterm=NONE
@@ -61,7 +63,6 @@ set background=dark
 if has("gui_running")
     set guioptions-=T
     set guioptions-=e
-    set t_Co=256
     set guitablabel=%M\ %t
 endif
 
@@ -87,7 +88,9 @@ map gf <c-w>gf
 " Always show Airline 
 set laststatus=2
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16_chalk'
+let g:airline_theme='base16_eighties'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 " Use 256 colours (Use this setting only if your terminal supports 256 colours)
 set t_Co=256
