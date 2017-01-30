@@ -8,7 +8,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -89,5 +90,11 @@ alias vpn-us="sudo openvpn --config /etc/openvpn/US_East.conf"
 alias fuckmaine="sudo netctl start fuckmaine"
 alias mouse="sudo ~/mouse_script.sh"
 alias e="emacs -nw"
-alias lowres="xrandr -s 1920x1080"
-alias highres="xrandr -s 2560x1440"
+alias lores="xrandr -s 1920x1080"
+alias hires="xrandr -s 2560x1440"
+alias tb="nc termbin.com 9999"
+alias chat="irssi -n rig0rmortis"
+alias remove="sudo pacman -Rnsc"
+alias update="sudo pacman -Syyu"
+alias update-aur="sudo aura -Ayyu"
+alias play='mpv -fs'
