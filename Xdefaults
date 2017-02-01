@@ -10,7 +10,7 @@ URxvt.geometry:             90x30
 URxvt.transparent:          false
 URxvt.fading:               0
 URxvt.loginShell:           true
-eRxvt.saveLines:            999999
+URxvt.saveLines:            1000
 URxvt.internalBorder:       3
 URxvt.lineSpace:            0
 urxvt*background:           rgba:0000/0000/0200/c800
@@ -18,24 +18,20 @@ URxvt.allow_bold:           true
 URxvt.font:	                xft:Sauce Code Powerline:pixelsize=16:antialias=true:hinting:true
 URxvt*termName:					    rxvt-unicode-256color
 URxvt.imLocale:					    en_US.UTF-8
-!URxvt.font:	                xft:SourceCodeProNerd:pixelsize=16:antialias=true:hinting:true
 URxvt*letterSpace:          -1
-URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
+URxvt.scrollStyle:          rxvt
 URxvt.perl-ext-common:      default,matcher,clipboard
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          google-chrome-stable
+URxvt.url-launcher:          google-chrome-stable
 URxvt.cursorBlink:          true
 URxvt.cursorColor:          #657b83
 URxvt.cursorUnderline:      false
 URxvt.pointerBlank:         true
 
-!*.cursorColor:          #657b83
 ! Keys
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
 URxvt*utf8:               1
-URxvt.clipboard.autocopy:   true
+URxvt*iso14755: false
 
 ! Base16 Eighties
 ! Scheme: Chris Kempson (http://chriskempson.com)
