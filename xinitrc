@@ -28,6 +28,9 @@ thunar --daemon &
 # Set wallpaper
 feh --bg-scale ~/Wallpapers/nms.jpg
 
+# Start clipboard
+parcellite &
+
 # Start NetworkManager applet
 nm-applet &
 
