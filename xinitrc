@@ -37,6 +37,9 @@ nm-applet &
 # Load the .Xdefaults file
 xrdb --merge ~/.Xdefaults
 
+# Source the systemd user file, this is for the keyring
+source /etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+
 # SSH-agent stuff to handle keys and what not
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
