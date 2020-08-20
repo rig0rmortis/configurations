@@ -48,7 +48,7 @@
 (setq company-idle-delay 0.1)
 
 ;; Make flycheck faster pew pew
-(setq flycheck-idle-change-delay 0)
+(setq flycheck-idle-change-delay 0.1)
 
 ;; Run flycheck on save, not on every new line
 (setq flycheck-check-syntax-automatically '(save mode-enable))
