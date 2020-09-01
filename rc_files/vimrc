@@ -9,12 +9,13 @@ filetype off                  " required
 
 filetype plugin indent on    " required
 highlight Pmenu ctermfg=black ctermbg=white guifg=black guibg=white
+highlight Search cterm=NONE ctermfg=white ctermbg=darkgray
 
 set encoding=utf-8
 set noswapfile
 set cursorline
-hi CursorColumn ctermfg=darkgray ctermbg=lightgray term=bold guifg=black guibg=blue gui=bold cterm=NONE
-hi CursorLine ctermfg=darkgray ctermbg=lightgray term=bold guifg=black guibg=blue gui=bold cterm=NONE
+highlight CursorColumn ctermfg=darkgray ctermbg=lightgray term=bold guifg=black guibg=blue gui=bold cterm=NONE
+highlight CursorLine ctermfg=darkgray ctermbg=lightgray term=bold guifg=black guibg=blue gui=bold cterm=NONE
 set cursorcolumn
 set scrolloff=15
 set number
@@ -80,8 +81,7 @@ map e <END>
 map b <HOME>
 map gf <c-w>gf
 
-inoremap jk <esc>
-inoremap kj <esc>
+inoremap <C-g> <esc>
 
 " Always show Airline 
 set laststatus=2
