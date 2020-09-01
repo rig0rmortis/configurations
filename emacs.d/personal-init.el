@@ -53,3 +53,6 @@
 ;; Run flycheck on save, not on every new line
 (setq flycheck-check-syntax-automatically '(save mode-enable))
 (add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; Set the default directory for emacs
+(setq default-directory "~/")
