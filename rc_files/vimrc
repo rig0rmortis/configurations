@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
 call plug#end()
 
 set nocompatible              " be iMproved, required
@@ -11,17 +10,11 @@ filetype off                  " required
 filetype plugin indent on    " required
 highlight Pmenu ctermfg=black ctermbg=white guifg=black guibg=white
 
-try
-    colorscheme mod8
-catch
-endtry
-
 set encoding=utf-8
-set t_Co=256
 set noswapfile
 set cursorline
-hi CursorColumn ctermfg=White ctermbg=darkgrey term=bold guifg=black guibg=blue gui=bold cterm=NONE
-hi CursorLine ctermfg=White ctermbg=darkgrey term=bold guifg=black guibg=blue gui=bold cterm=NONE
+hi CursorColumn ctermfg=darkgray ctermbg=lightgray term=bold guifg=black guibg=blue gui=bold cterm=NONE
+hi CursorLine ctermfg=darkgray ctermbg=lightgray term=bold guifg=black guibg=blue gui=bold cterm=NONE
 set cursorcolumn
 set scrolloff=15
 set number
@@ -57,7 +50,9 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
-set background=dark
+" Use 256 colours (Use this setting only if your terminal supports 256 colours)
+set t_Co=256
+set background=light
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -85,15 +80,17 @@ map e <END>
 map b <HOME>
 map gf <c-w>gf
 
+inoremap jk <esc>
+inoremap kj <esc>
+
 " Always show Airline 
 set laststatus=2
-let g:airline_powerline_fonts = 1
-let g:airline_theme='base16_eighties'
+" let g:airline_powerline_fonts = 1
+let g:solarized_termcolors=256
+let g:airline_theme = 'term_light'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-" Use 256 colours (Use this setting only if your terminal supports 256 colours)
-set t_Co=256
 
 function! HasPaste()
   if &paste
