@@ -37,15 +37,19 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; Enable global company-mode and enable fuzzy matching
+(setq company-global-modes '(not eshell-mode))
 (add-hook 'after-init-hook 'global-company-mode)
 (global-company-fuzzy-mode t)
 
 ;; Fuzzy matching in Helm
-(setq helm-mode-fuzzy-match t)
+(setq helm-completion-style t)
 (setq helm-completion-in-region-fuzzy-match t)
 
 ;; Make company mode faster
-(setq company-idle-delay 0.1)
+;; (setq company-idle-delay 0.1)
+
+;; inline flycheck
+(global-flycheck-inline-mode)
 
 ;; Make flycheck faster pew pew
 (setq flycheck-idle-change-delay 0.1)
@@ -56,3 +60,18 @@
 
 ;; Set the default directory for emacs
 (setq default-directory "~/")
+
+;; Don't let smartparens kill region conflict with kill region
+(defun my-kill-region-or-line (&optional arg)
+  "Kill active region or current line."
+  (interactive "p")
+  (if (use-region-p)
+      (sp-kill-region (region-beginning) (region-end))
+    (sp-kill-whole-line)))
+
+;; Set C-w to above function
+(global-set-key (kbd "C-w") 'my-kill-region-or-line)
+
+;; Attempt to solve the screen flicker
+(setq default-frame-alist
+      (append default-frame-alist '((inhibit-double-buffering . t))))
