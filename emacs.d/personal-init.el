@@ -37,29 +37,51 @@
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ;; Enable global company-mode and enable fuzzy matching
-(setq company-global-modes '(not eshell-mode))
+;; (setq company-global-modes '(not eshell-mode))
+;; (global-company-mode 1)
 (add-hook 'after-init-hook 'global-company-mode)
 (global-company-fuzzy-mode t)
 
-;; Fuzzy matching in Helm
+;; Do some Helm configuration and fuzzy matching in Helm
 (setq helm-completion-style t)
-(setq helm-completion-in-region-fuzzy-match t)
+(setq helm-completion-style 'emacs)
+(setq completion-styles '(flex))
+(setq helm-show-completion-display-function 'helm-default-display-buffer)
+;; (setq helm-eshell-fuzzy-match t)
+;; (setq helm-completion-in-region-fuzzy-match t)
+;; (setq helm-buffers-fuzzy-matching t)
+;; (setq helm-recentf-fuzzy-match t)
+;; (setq helm-mode-fuzzy-match t)
+;; (setq helm-mini-fuzzy-match t)
+;; (setq helm-m-x-fuzzy-match t)
+;; (setq helm-etags-fuzzy-match t)
+;; (setq helm-ff-fuzzy-matching t)
+;; (setq helm-imenu-fuzzy-match t)
+;; (setq helm-locate-fuzzy-match t)
+;; (setq helm-apropos-fuzzy-match t)
+;; (setq helm-session-fuzzy-match t)
+;; (setq helm-locate-library-fuzzy-match t)
+;; (setq helm-file-cache-fuzzy-match t)
 
-;; Make company mode faster
-;; (setq company-idle-delay 0.1)
+(setq helm-autoresize-min-height 35)
+(setq helm-autoresize-max-height 50)
+(helm-autoresize-mode 1)
+
+;; Tweak company idle delay
+(setq company-idle-delay 0.5)
 
 ;; inline flycheck
 (global-flycheck-inline-mode)
 
-;; Make flycheck faster pew pew
-(setq flycheck-idle-change-delay 0.1)
+;; Tweak flycheck idle delay
+(setq flycheck-idle-change-delay 0.3)
 
 ;; Run flycheck on save, not on every new line
 (setq flycheck-check-syntax-automatically '(save mode-enable))
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; Set the default directory for emacs
-(setq default-directory "~/")
+(setq default-directory "~/src")
 
 ;; Don't let smartparens kill region conflict with kill region
 (defun my-kill-region-or-line (&optional arg)
@@ -72,6 +94,10 @@
 ;; Set C-w to above function
 (global-set-key (kbd "C-w") 'my-kill-region-or-line)
 
-;; Attempt to solve the screen flicker
-(setq default-frame-alist
-      (append default-frame-alist '((inhibit-double-buffering . t))))
+;; Use helm auto completion in eshell
+;; (add-hook 'eshell-mode-hook
+;;           (lambda ()
+;;             (define-key
+;;               eshell-mode-map
+;;               (kbd "<tab>")
+;;               #'helm-esh-pcomplete)))
