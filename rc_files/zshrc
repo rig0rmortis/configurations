@@ -68,7 +68,7 @@ ZSH_THEME="theunraveler"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git poetry)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -113,24 +113,31 @@ alias kc=kubectx
 alias kn=kubens
 alias k=kubectl
 
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
+# source <(kubectl completion zsh)
+# complete -F __start_kubectl k
 
-# export PYTHONPATH=`brew --prefix`/lib/python3.8/site-packages:$PYTHONPATH
+# export PYTHONPATH=`brew --prefix`/lib/python3.9/site-packages:$PYTHONPATH
 
 # eval "$(ssh-agent -s)"
 
 # Run this command to configure your shell: 
 # eval $(docker-machine env default)
 
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
-export PATH="/Users/omar/.rbenv/shims:/usr/local/opt/python@3.8/bin:/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/python@3.9/bin:/usr/local/sbin:$PATH"
 autoload -U compinit && compinit
 
-export GOOGLE_AUTH_SUPPRESS_CREDENTIALS_WARNINGS=1
+# export GOOGLE_AUTH_SUPPRESS_CREDENTIALS_WARNINGS=1
 unsetopt nomatch
-[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+# [ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+
+export GUILE_LOAD_PATH="/usr/local/share/guile/site/3.0"
+export GUILE_LOAD_COMPILED_PATH="/usr/local/lib/guile/3.0/site-ccache"
+export GUILE_SYSTEM_EXTENSIONS_PATH="/usr/local/lib/guile/3.0/extensions"
+
+# opam configuration
+test -r /Users/omar/.opam/opam-init/init.zsh && . /Users/omar/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
