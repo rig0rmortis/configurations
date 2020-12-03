@@ -32,6 +32,7 @@
 
 ;; whitespace mode
 (global-whitespace-mode t)
+(setq whitespace-line-column 100)
 
 ;; Automatically remove whitespace on save
 (add-hook 'before-save-hook 'whitespace-cleanup)
@@ -46,7 +47,7 @@
 (setq helm-completion-style t)
 (setq helm-completion-style 'emacs)
 (setq completion-styles '(flex))
-(setq helm-show-completion-display-function 'helm-default-display-buffer)
+;; (setq helm-show-completion-display-function 'helm-default-display-buffer)
 ;; (setq helm-eshell-fuzzy-match t)
 ;; (setq helm-completion-in-region-fuzzy-match t)
 ;; (setq helm-buffers-fuzzy-matching t)
@@ -95,9 +96,9 @@
 (global-set-key (kbd "C-w") 'my-kill-region-or-line)
 
 ;; Use helm auto completion in eshell
-;; (add-hook 'eshell-mode-hook
-;;           (lambda ()
-;;             (define-key
-;;               eshell-mode-map
-;;               (kbd "<tab>")
-;;               #'helm-esh-pcomplete)))
+(add-hook 'eshell-mode-hook
+          (lambda ()
+            (define-key
+              eshell-mode-map
+              (kbd "<tab>")
+              #'helm-esh-pcomplete)))
