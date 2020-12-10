@@ -6,4 +6,6 @@ vim
 xmobar
 zsh
 xorg stuff (xdefaults, xmodmap, xinitrc)
+emacs
+karabiner
 ```
